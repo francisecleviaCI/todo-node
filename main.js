@@ -29,5 +29,29 @@ const displayTodos = function(array){
     let result = displayTodos(todos);
     // console.log(result)
     
+const readline = require('readline')
+const interface = readline.createInterface({input: process.stdin, output: process.stdout})
 
-  
+
+    const handleMenu = function(userInput){
+        if (userInput === '1'){
+            console.log(userInput);
+           }  else {
+               console.log('You are quitting!')
+        }
+      
+        
+        interface.close();
+    }
+
+const menu = `
+Your options are:
+
+1. Add a todo.
+2. Remove a todo.
+3. Mark a todo completed.
+4. Mark a todo uncompleted.
+5. Quit.
+`
+
+interface.question(menu, handleMenu )
