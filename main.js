@@ -19,15 +19,15 @@ const rowStrings = loadTodos.split('\n');
 const displayTodos = function(array){
     for (let i = 0; i < todos.length; i++){
         if (todos[i][1] === 'complete'){
-            console.log(todos[i][0] + (' -') + ' ' + todos[i][1] + ' ✅')
+            console.log((i + 1) + ' ' + todos[i][0] + (' -') + ' ' + todos[i][1] + ' ✅')
         } else {
-            console.log(todos[i][0] + ' -' + ' ' + todos[i][1] + ' ✖')
+            console.log((i + 1) + ' ' + todos[i][0] + ' -' + ' ' + todos[i][1] + ' ✖')
         }
         }
         
     }
-    let result = displayTodos(todos);
-    // console.log(result)
+const result = displayTodos(todos);
+
     
 const readline = require('readline')
 const interface = readline.createInterface({input: process.stdin, output: process.stdout})
@@ -35,7 +35,7 @@ const interface = readline.createInterface({input: process.stdin, output: proces
 
     const handleMenu = function(userInput){
         if (userInput === '1'){
-            console.log(userInput);
+            console.log(addMenu, add);
            }  else {
                console.log('You are quitting!')
         }
@@ -43,7 +43,8 @@ const interface = readline.createInterface({input: process.stdin, output: proces
         
         interface.close();
     }
-
+const addMenu = 'What do you want to put on your todo list?'
+    
 const menu = `
 Your options are:
 
@@ -61,20 +62,16 @@ const add = function(userInput){
     
     const newArray = [userInput, 'uncomplete'];
     
-    todos.push(newArray)  
+    todos.push(newArray)
+    // console.log(todos);  
     
-  
+    
     interface.close();
 }
+const result2 = displayTodos(todos);
 
-const addMenu = 'What do you want to put on your todo list?'
 
-
-interface.question(addMenu, add )
-
-let result2 = displayTodos(todos);
-
-///
+//**** */ ///
 const saveTodos = function(csv){
 const newEmptyArray = [];   
 
@@ -92,21 +89,21 @@ const newSaveTodos = saveTodos(newCsvFile);
 }
 }
 
-//**Removing Todos**//
+// // **Removing Todos**//
 
-const remove = function(userInput){
+// const remove = function(userInput){
     
-    const newArray = [userInput, 'complete'];
+//     const newArray = [userInput, 'complete'];
     
-    todos.splice(newArray)  
+//     todos.splice(newArray)  
     
   
-    interface.close();
-}
+//     interface.close();
+// }
 
-const addMenu = 'What do you want to put on your todo list?'
+// const removeMenu = 'What do you want to remove from your todo list?'
 
 
-interface.question(addMenu, add )
+// interface.question(removeMenu, remove )
 
-let result3 = displayTodos(todos);
+// let result3 = displayTodos(todos);
