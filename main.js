@@ -55,3 +55,29 @@ Your options are:
 `
 
 interface.question(menu, handleMenu )
+
+
+const add = function(userInput){
+    
+    const newArray = [userInput, 'uncomplete'];
+    
+    todos.push(newArray)  
+    
+  
+    interface.close();
+}
+
+const addMenu = 'What do you want to put on your todo list?'
+
+
+interface.question(addMenu, add )
+
+let result2 = displayTodos(todos);
+
+///
+const saveTodos = function(){
+const newEmptyArray = [];   
+
+for (let i = 0; i < todos.length; i++)
+
+}

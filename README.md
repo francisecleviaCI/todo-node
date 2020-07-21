@@ -77,7 +77,7 @@ After each time our user changes their data, we'll need to not just update our a
 
 * Let's make a new function, maybe... `saveTodos`?
 * We'll have to do a basic mapping operation, where we'll make a new array of comma-separated strings instead of sub-arrays. So instead of each todo being `['take out the trash', 'uncomplete']`, it will be 'take out the trash,uncomplete'. Make a new empty array.
-* Now let's loop through our todos array, and for each todo, push into our new array a string in the format above. Then we'll have an array of CSV rows.
+* Now let's loop through our todos array, and for each todo, push into our new array a string in the format above. Then we'll have an array of CSV rows.***** CONTINUE HERE ***
 * Now! If we `join` the elements of that array of CSV rows, we'll be right back to a big long CSV string. Feel free to console.log your results and see!
 * Now we can call another great `fs` method, `writeFileSync`. It assumes `utf8`, so we don't have to pass that, but we DO have to pass two arguments: the path to the file we're writing to, and the new contents. (Which will replace the old; changing the file without fully rewriting it is beyond the scope of this particular project!) Pass in the file path and the CSV string and you're done!
 * Now let's go back and make sure this works. In `add`, AFTER you've changed `todos`, call `saveTodos`. It will look at the contents of your todos array and write to the file based on that.
