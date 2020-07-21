@@ -75,9 +75,38 @@ interface.question(addMenu, add )
 let result2 = displayTodos(todos);
 
 ///
-const saveTodos = function(){
+const saveTodos = function(csv){
 const newEmptyArray = [];   
 
-for (let i = 0; i < todos.length; i++)
+for (newTodos of todos){
 
+    newEmptyArray.push(todos);
+ 
+const newJoin = newEmptyArray.join();
+
+const newCsvFile = fs.writeFileSync('./todos.csv', newJoin);
+// console.log(newCsvFile)
+
+const newSaveTodos = saveTodos(newCsvFile);
+// console.log(newSaveTodos);
 }
+}
+
+//**Removing Todos**//
+
+const remove = function(userInput){
+    
+    const newArray = [userInput, 'complete'];
+    
+    todos.splice(newArray)  
+    
+  
+    interface.close();
+}
+
+const addMenu = 'What do you want to put on your todo list?'
+
+
+interface.question(addMenu, add )
+
+let result3 = displayTodos(todos);
