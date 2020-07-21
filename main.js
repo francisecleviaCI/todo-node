@@ -36,6 +36,8 @@ const interface = readline.createInterface({input: process.stdin, output: proces
     const handleMenu = function(userInput){
         if (userInput === '1'){
             console.log(addMenu, add);
+        } else if (userInput === '2'){
+                console.log(removeMenu, remove);
            }  else {
                console.log('You are quitting!')
         }
@@ -67,8 +69,8 @@ const add = function(userInput){
     
     
     interface.close();
+    const result2 = displayTodos(todos);
 }
-const result2 = displayTodos(todos);
 
 
 //**** */ ///
@@ -89,21 +91,20 @@ const newSaveTodos = saveTodos(newCsvFile);
 }
 }
 
-// // **Removing Todos**//
+// **Removing Todos**//
 
-// const remove = function(userInput){
+const remove = function(userInput){
     
-//     const newArray = [userInput, 'complete'];
+    const newArray = [userInput, 'complete'];
     
-//     todos.splice(newArray)  
+    todos.splice(newArray)  
     
   
-//     interface.close();
-// }
+    const result3 = displayTodos(todos);
+    interface.close();
+}
 
-// const removeMenu = 'What do you want to remove from your todo list?'
+const removeMenu = 'What do you want to remove from your todo list?'
 
 
-// interface.question(removeMenu, remove )
-
-// let result3 = displayTodos(todos);
+interface.question(removeMenu, remove )
